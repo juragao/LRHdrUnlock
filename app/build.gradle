@@ -1,0 +1,8 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'com.example.lrhdrunlock'
+    compileSdk 34
+    defaultConfig { applicationId 'com.example.lrhdrunlock'; minSdk 26; targetSdk 34; versionCode 1; versionName '1.0' }
+}
+repositories { maven { url 'https://api.xposed.info/' } }
+dependencies { compileOnly 'de.robv.android.xposed:api:82' }
