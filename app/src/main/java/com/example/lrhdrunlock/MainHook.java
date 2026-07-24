@@ -20,8 +20,8 @@ public class MainHook implements IXposedHookLoadPackage {
                 cl, "d", XC_MethodReplacement.returnConstant(true));
 
         // 第二道门：照片 HDR 支路开关
-        /*XposedHelpers.findAndHookMethod("com.adobe.lrmobile.utils.l",
-                cl, "c", XC_MethodReplacement.returnConstant(true));*/
+        XposedHelpers.findAndHookMethod("com.adobe.lrmobile.utils.l",
+                cl, "c", XC_MethodReplacement.returnConstant(true));
 
         // 保险：loupe 照片 BLAST 层 headroom=0 改写成 5
         try {
