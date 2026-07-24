@@ -16,15 +16,15 @@ public class MainHook implements IXposedHookLoadPackage {
         ClassLoader cl = lpparam.classLoader;
 
         // 第一道门：HDR 显示总开关（原有）
-        /*XposedHelpers.findAndHookMethod("com.adobe.lrmobile.utils.l",
-                cl, "d", XC_MethodReplacement.returnConstant(true));*/
+        XposedHelpers.findAndHookMethod("com.adobe.lrmobile.utils.l",
+                cl, "d", XC_MethodReplacement.returnConstant(true));
 
         // 第二道门：照片 HDR 支路开关
-        /*XposedHelpers.findAndHookMethod("com.adobe.lrmobile.utils.l",
-                cl, "c", XC_MethodReplacement.returnConstant(true));*/
+        XposedHelpers.findAndHookMethod("com.adobe.lrmobile.utils.l",
+                cl, "c", XC_MethodReplacement.returnConstant(true));
 
         // 保险：loupe 照片 BLAST 层 headroom=0 改写成 5
-        try {
+        /*try {
             XposedHelpers.findAndHookMethod("android.view.SurfaceControl$Transaction",
                     cl, "setDesiredHdrHeadroom",
                     "android.view.SurfaceControl", float.class,
@@ -41,6 +41,6 @@ public class MainHook implements IXposedHookLoadPackage {
                     });
         } catch (Throwable t) {
             XposedBridge.log("lrhdrunlock: headroom hook 失败 " + t);
-        }
+        }*/
     }
 }
