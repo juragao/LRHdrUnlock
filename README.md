@@ -1,0 +1,1 @@
+用于开启安卓版Lightroom的HDR预览功能的LSPosed模块
